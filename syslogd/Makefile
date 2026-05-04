@@ -8,6 +8,8 @@ PKG_LICENSE:=GPL-2.0-or-later
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
+CMAKE_SOURCE_DIR = $(CURDIR)
+
 define Package/ysyslogd
   SECTION:=utils
   CATEGORY:=Utilities
@@ -28,7 +30,7 @@ endef
 
 define Package/ysyslogd/install
 	$(INSTALL_DIR) $(1)/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/sbin/syslogd $(1)/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/syslogd $(1)/sbin/
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/syslogd.init $(1)/etc/init.d/ysyslogd
 	$(INSTALL_DIR) $(1)/etc

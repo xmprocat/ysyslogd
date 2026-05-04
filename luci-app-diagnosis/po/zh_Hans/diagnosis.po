@@ -1,0 +1,95 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Diagnosis"
+msgstr "日志与诊断"
+
+msgid "System Diagnosis"
+msgstr "系统诊断"
+
+msgid "Configure syslog daemon, adjust log levels, set up remote syslog forwarding, and export logs for troubleshooting."
+msgstr "配置 syslog 守护进程，调整日志等级，设置远程 syslog 转发，导出日志用于故障排查。"
+
+msgid "Daemon Status"
+msgstr "守护进程状态"
+
+msgid "syslogd"
+msgstr "syslogd"
+
+msgid "Checking..."
+msgstr "检测中..."
+
+msgid "Log Settings"
+msgstr "日志设置"
+
+msgid "Log Level"
+msgstr "日志等级"
+
+msgid "Messages with priority lower than this level are filtered. Level 8 (DEBUG) shows all messages."
+msgstr "低于此等级的日志将被过滤。等级 8 (DEBUG) 显示所有消息。"
+
+msgid "Log Size (KB)"
+msgstr "日志大小 (KB)"
+
+msgid "Maximum log file size before rotation. Set to 0 to disable rotation."
+msgstr "日志文件轮转前的最大大小。设为 0 取消轮转。"
+
+msgid "Rotated Copies"
+msgstr "轮转份数"
+
+msgid "Number of old log files to keep, 0-99."
+msgstr "保留的旧日志文件数量，0-99。"
+
+msgid "Kernel Log"
+msgstr "内核日志"
+
+msgid "Also read kernel messages from /dev/kmsg."
+msgstr "同时从 /dev/kmsg 读取内核消息。"
+
+msgid "Remote Syslog"
+msgstr "远程 Syslog"
+
+msgid "Remote Server"
+msgstr "远程服务器"
+
+msgid "Forward logs to a remote syslog server. Format: [tcp://]host[:port]."
+msgstr "将日志转发到远程 syslog 服务器。格式: [tcp://]主机[:端口]。"
+
+msgid "Listen Port"
+msgstr "监听端口"
+
+msgid "TCP and UDP port to receive syslog from other devices. 0 = disabled."
+msgstr "接收其他设备 syslog 消息的 TCP+UDP 端口。设为 0 关闭。"
+
+msgid "Log Export"
+msgstr "日志导出"
+
+msgid "Log Files"
+msgstr "日志文件"
+
+msgid "Download Logs"
+msgstr "下载日志"
+
+msgid "Package and download current log files."
+msgstr "打包当前日志文件并下载。"
+
+msgid "Save & Apply"
+msgstr "保存并应用"
+
+msgid "Settings saved and applied to syslogd"
+msgstr "设置已保存并应用到 syslogd"
+
+msgid "Save failed: %s"
+msgstr "保存失败: %s"
+
+msgid "Export failed: %s"
+msgstr "导出失败: %s"
+
+msgid "Export failed"
+msgstr "导出失败"
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Error"
+msgstr "错误"

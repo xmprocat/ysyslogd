@@ -1,12 +1,45 @@
 {
 	"admin/system/diagnosis": {
 		"title": "Diagnosis",
-		"order": 99,
+		"order": 90,
 		"action": {
-			"type": "firstchild"
+			"type": "view",
+			"path": "diagnosis"
 		},
 		"depends": {
 			"acl": ["luci-app-diagnosis"]
+		}
+	},
+
+	"admin/system/diagnosis/status": {
+		"action": {
+			"type": "function",
+			"module": "luci.controller.diagnosis",
+			"function": "action_status"
+		}
+	},
+
+	"admin/system/diagnosis/download": {
+		"action": {
+			"type": "function",
+			"module": "luci.controller.diagnosis",
+			"function": "action_download"
+		}
+	},
+
+	"admin/system/diagnosis/apply": {
+		"action": {
+			"type": "function",
+			"module": "luci.controller.diagnosis",
+			"function": "action_apply"
+		}
+	},
+
+	"admin/system/diagnosis/export": {
+		"action": {
+			"type": "function",
+			"module": "luci.controller.diagnosis",
+			"function": "action_export"
 		}
 	}
 }

@@ -2,10 +2,17 @@
 	"luci-app-diagnosis": {
 		"description": "Grant access to diagnosis procedures",
 		"read": {
-			"uci": ["diagnosis"]
+			"uci": ["diagnosis"],
+			"file": [
+				"/etc/syslog.conf",
+				"/tmp/log/*"
+			]
 		},
 		"write": {
-			"uci": ["diagnosis"]
+			"uci": ["diagnosis"],
+			"file": [
+				"/etc/syslog.conf"
+			]
 		}
 	}
 }

@@ -1,7 +1,11 @@
 touch /etc/config/diagnosis
 uci set diagnosis.ysyslogd=ysyslogd
-uci set diagnosis.ysyslogd.server_port=514
-uci set diagnosis.ysyslogd.remote=
 uci set diagnosis.ysyslogd.log_level=8
+uci set diagnosis.ysyslogd.log_size=5120
+uci set diagnosis.ysyslogd.log_rotate=4
+uci set diagnosis.ysyslogd.remote=
+uci set diagnosis.ysyslogd.server_port=0
+uci set diagnosis.ysyslogd.kernel_log=1
+uci set diagnosis.ysyslogd.kmsg=0
 uci commit diagnosis
 return 0
