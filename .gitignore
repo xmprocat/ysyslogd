@@ -1,0 +1,6 @@
+# Build artifacts
+out/
+cmake_build_*/
+
+# Claude Code
+.claude/

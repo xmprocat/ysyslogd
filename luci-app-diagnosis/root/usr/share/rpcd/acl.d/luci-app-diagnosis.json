@@ -1,0 +1,11 @@
+{
+	"luci-app-diagnosis": {
+		"description": "Grant access to diagnosis procedures",
+		"read": {
+			"uci": ["diagnosis"]
+		},
+		"write": {
+			"uci": ["diagnosis"]
+		}
+	}
+}

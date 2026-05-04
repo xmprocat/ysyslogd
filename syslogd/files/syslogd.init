@@ -1,0 +1,22 @@
+#!/bin/sh /etc/rc.common
+
+START=12
+USE_PROCD=1
+PROG=/sbin/syslogd
+
+CONFFILE=/etc/syslog.conf
+
+start_service() {
+    procd_open_instance
+    procd_set_param command "$PROG" -n -c "$CONFFILE" -O /var/log/messages
+    procd_set_param respawn
+    procd_close_instance
+}
+
+service_triggers() {
+    procd_add_reload_trigger "syslogd"
+}
+
+reload_service() {
+    "$PROG" -c "$CONFFILE" --reload
+}

@@ -1,0 +1,12 @@
+{
+	"admin/system/diagnosis": {
+		"title": "Diagnosis",
+		"order": 99,
+		"action": {
+			"type": "firstchild"
+		},
+		"depends": {
+			"acl": ["luci-app-diagnosis"]
+		}
+	}
+}
