@@ -35,8 +35,8 @@ src-git syslogd_feed https://github.com/xmprocat/ysyslogd
 
 ```bash
 ./scripts/feeds update syslogd_feed
-./scripts/feeds install syslogd luci-app-diagnosis
-make menuconfig  # Utilities → syslogd, LuCI → luci-app-diagnosis
+./scripts/feeds install ysyslogd luci-app-diagnosis
+make menuconfig  # Utilities → ysyslogd, LuCI → luci-app-diagnosis
 ```
 
 ### 软链接方式（开发调试）

@@ -14,7 +14,7 @@ start_service() {
 }
 
 service_triggers() {
-    procd_add_reload_trigger "syslogd"
+    procd_add_reload_trigger "ysyslogd"
 }
 
 reload_service() {
