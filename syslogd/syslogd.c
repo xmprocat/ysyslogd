@@ -329,6 +329,7 @@ static void parse_syslogdcfg(const char *file)
         for (int i = 0; i < 8; i++) {
             if (tok[i]) { free(tok[i]); tok[i] = NULL; }
         }
+        next_line: ;
     }
     config_close(parser);
     return;
@@ -337,11 +338,12 @@ static void parse_syslogdcfg(const char *file)
     for (int i = 0; i < 8; i++) {
         if (tok[i]) free(tok[i]);
     }
-    config_close(parser);
-    bb_error_msg_and_die("error in '%s' at line %d",
-            file ? file : "/etc/syslog.conf",
-            parser->lineno);
+    bb_error_msg("skipping invalid line %d in '%s'",
+            parser->lineno,
+            file ? file : "/etc/syslog.conf");
+    goto next_line;
 }
+
 
 enum { KEY_ID = 0x414e4547 };
 
@@ -1773,7 +1775,7 @@ int syslogd_main(int argc, char **argv)
             llist_add_to(&remoteAddrList, xstrdup(optarg));
             break;
         case 'D': opts |= OPT_dup; break;
-        case 'f': opt_f = optarg; break;
+        /* case 'f': opt_f = optarg; break; -- disabled */
         case 'r': opt_r = optarg ? optarg : "514"; break;
         case 'v':
             /* Handled before getopt — should not reach here */
@@ -1862,7 +1864,8 @@ int syslogd_main(int argc, char **argv)
         llist_add_to(&G.remoteHosts, rh);
     }
 
-    parse_syslogdcfg(opt_f);
+    if (opt_f)
+        parse_syslogdcfg(opt_f);
 
     G.hostname = safe_gethostname();
     {
