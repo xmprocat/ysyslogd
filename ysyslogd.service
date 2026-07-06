@@ -1,0 +1,13 @@
+[Unit]
+Description=ysyslogd - System Log Daemon
+DefaultDependencies=no
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/ysyslogd -n -c /etc/syslog.conf -k
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=sysinit.target

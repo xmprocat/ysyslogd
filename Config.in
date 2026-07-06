@@ -1,0 +1,4 @@
+config BR2_PACKAGE_YSYSLOGD
+	bool "ysyslogd"
+	help
+	  Standalone syslog daemon with ring buffer
