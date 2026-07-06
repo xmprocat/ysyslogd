@@ -22,7 +22,8 @@ define YSYSLOGD_INSTALL_TARGET_CMDS
 	mkdir -p $(TARGET_DIR)/etc/systemd/system/sysinit.target.wants
 	ln -sf /usr/lib/systemd/system/ysyslogd.service \
 		$(TARGET_DIR)/etc/systemd/system/sysinit.target.wants/ysyslogd.service
-	mkdir -p $(TARGET_DIR)/tmp/log
+	# Run depmod so modprobe works for all kernel modules
+	$(HOST_DIR)/sbin/depmod -a -b $(TARGET_DIR) 6.1.118+
 endef
 
 $(eval $(generic-package))
